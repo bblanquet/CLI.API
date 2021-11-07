@@ -7,10 +7,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
 WORKDIR /src
-COPY ["CLICKA.TechnicalAssessment/CLICKA.TechnicalAssessment.csproj", "CLICKA.TechnicalAssessment/"]
-RUN dotnet restore "CLICKA.TechnicalAssessment/CLICKA.TechnicalAssessment.csproj"
+COPY ["CLICKA.TechnicalAssessment.csproj", "."]
+RUN dotnet restore "CLICKA.TechnicalAssessment.csproj"
 COPY . .
-WORKDIR "/src/CLICKA.TechnicalAssessment"
+WORKDIR /src
 RUN dotnet build "CLICKA.TechnicalAssessment.csproj" -c Release -o /app/build
 
 FROM build AS publish

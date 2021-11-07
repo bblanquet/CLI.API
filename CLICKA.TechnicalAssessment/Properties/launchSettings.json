@@ -29,9 +29,13 @@
     "Docker": {
       "commandName": "Docker",
       "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/weatherforecast",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/communication/list",
       "publishAllPorts": true,
-      "useSSL": true
+      "useSSL": true,
+      "environmentVariables": {
+        "IP": "10.100.237.89",
+        "LIST": "10.100.237.89,10.100.185.106,10.100.60.154"
+      }
     }
   }
 }
